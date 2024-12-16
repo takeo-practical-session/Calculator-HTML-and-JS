@@ -1,67 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Calculator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-      background-color: #f0f0f0;
-    }
-    .calculator {
-      margin: auto;
-      padding: 20px;
-      max-width: 300px;
-      border: 1px solid #ddd;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .calculator input {
-      width: 90%;
-      margin: 10px 0;
-      padding: 10px;
-      font-size: 16px;
-    }
-    .calculator button {
-      margin: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007BFF;
-      color: #fff;
-      cursor: pointer;
-    }
-    
-    .calculator button:hover {
-      background-color: #0056b3;
-    }
-    .result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-  <h1>Simple Calculator</h1>
-  <div class="calculator">
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
-    <div>
-      <button data-operation="add">+</button>
-      <button data-operation="subtract">-</button>
-      <button data-operation="multiply">×</button>
-      <button data-operation="divide">÷</button>
-      <button data-operation="modulo">%</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <button id="darkModeToggle" class="dark-mode-toggle">
+        🌙 Toggle Dark Mode
+      </button>
+      <div class="calculator">
+        <h1>Calculator</h1>
+        <div class="inputs">
+          <input type="number" id="num1" placeholder="Enter first number" />
+          <input type="number" id="num2" placeholder="Enter second number" />
+        </div>
+        <div class="operations">
+          <button onclick="performOperation('+')">+</button>
+          <button onclick="performOperation('-')">-</button>
+          <button onclick="performOperation('*')">×</button>
+          <button onclick="performOperation('/')">÷</button>
+          <button onclick="performOperation('%')">%</button>
+        </div>
+        <div id="result" class="result"></div>
+        <div id="history" class="history">
+          <h3>Calculation History</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </div>
     </div>
-    <div class="result" id="result">Result will appear here</div>
-  </div>
-  <script src="calculator.js"></script>
-</body>
+    <script src="calculator.js"></script>
+  </body>
 </html>
